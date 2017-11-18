@@ -1,3 +1,8 @@
+/*
+  This component is inteneded for single unit code ONLY.
+  If part of the search input is provided, please refer to GroupSearchComponent.
+*/
+
 import React from 'react'
 import 'whatwg-fetch'
 
