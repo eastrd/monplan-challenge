@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
-import ExampleComponent from '../components/example/'
+import SearchComponent from "../components/search"
+
 class App extends Component {
   render () {
     return (
@@ -11,8 +12,8 @@ class App extends Component {
           <h1 className='App-title'>Monash Handbook Unit Viewer</h1>
         </header>
         <p className='App-intro'>
-          {/* INSERT COMPONENTS REGION */}
-          <ExampleComponent />
+          {  }
+          <SearchComponent />
         </p>
       </div>
     )
