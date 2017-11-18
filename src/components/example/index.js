@@ -11,7 +11,7 @@ class ExampleComponent extends React.Component {
   }
 
   componentWillMount () {
-    fetch('http://monplan-api-dev.appspot.com/units/FIT3080')
+    fetch('http://monplan-api-dev.appspot.com/units/'+this.props.unitCode)
             .then((resp) => {
               return resp.json()
             })
@@ -28,12 +28,12 @@ class ExampleComponent extends React.Component {
   }
 
   render () {
-    const { data } = this.state
+    const { data, error } = this.state
     const { unitName, unitCode, description } = data
     return (
       <div style={{width: '80%', textAlign: 'center'}}>
-        <h1>{unitCode} - {unitName}</h1>
-        <p>{description}</p>
+        <h1>{error ? "Error" : unitCode} {error ? ":" : "-"} {error ? "Unit not found" : unitName}</h1>
+        <p>{error ? "M8, Try search something else" : description}</p>
       </div>
     )
   }
