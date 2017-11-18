@@ -2,8 +2,12 @@ import React, { Component } from 'react'
 import logo from './logo.svg'
 import './App.css'
 import InputComponent from "../components/input"
+import FetchAllComponent from "../components/fetchAll"
 
 class App extends Component {
+  dataShareCallBack = (allUnitData) => {
+    
+  }
   render () {
     return (
       <div className='App'>
@@ -13,6 +17,7 @@ class App extends Component {
         </header>
         <p className='App-intro'>
           {  }
+          <FetchAllComponent />
           <InputComponent />
         </p>
       </div>
