@@ -1,7 +1,7 @@
 import React from 'react'
 import 'whatwg-fetch'
 
-class ExampleComponent extends React.Component {
+class SingleSearchComponent extends React.Component {
   constructor () {
     super()
     this.state = {
@@ -39,4 +39,4 @@ class ExampleComponent extends React.Component {
   }
 }
 
-export default ExampleComponent
+export default SingleSearchComponent

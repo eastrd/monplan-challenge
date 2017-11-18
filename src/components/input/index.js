@@ -1,7 +1,7 @@
 import React from "react"
-import ExampleComponent from '../example'
+import SingleSearchComponent from '../singleSearch'
 
-class SearchComponent extends React.Component {
+class InputComponent extends React.Component {
   constructor(props){
     super(props)
     this.state = {input: ""}
@@ -15,15 +15,15 @@ class SearchComponent extends React.Component {
 
 
   render(){
-    // If the input is exactly 7 digits, search the exact unit code.
     // If the input is < 7 digits but >= 3 digits, search all units that matches.
+    // If the input is exactly 7 digits, search the exact unit code.
     return (
       <div>
         <input type="text" onChange={this.handleChange} />
-        { this.state.input.length == 7 ? <ExampleComponent unitCode={this.state.input} /> : null}
+        { this.state.input.length == 7 ? <SingleSearchComponent unitCode={this.state.input} /> : null}
       </div>
     )
   }
 }
 
-export default SearchComponent
+export default InputComponent
