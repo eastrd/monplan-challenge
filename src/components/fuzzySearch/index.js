@@ -46,9 +46,12 @@ class FuzzySearchComponent extends React.Component {
       return (
         <div>
           <SingleSearchComponent unitCode={inputCode} />
-          <button align="centre" onClick={this.handleBackButtonClick}>
-            Back
-          </button>
+          <div class="ui divider" align="left">
+          <br/>
+            <button class="ui primary button" onClick={this.handleBackButtonClick}>
+              Back
+            </button>
+          </div>
         </div>
       )
     }
@@ -70,9 +73,11 @@ class FuzzySearchComponent extends React.Component {
           {
             wantedUnitCodes.map(
               wantedUnitCode =>
-                <div align="left" onClick={this.handleUnitClick}>
+                <div onClick={this.handleUnitClick} style={{textAlign: 'left'}}>
                   <a href="#" style={linkNoUnderscoreNoColourStyle}>
-                    { wantedUnitCode + " :  " + localStorage.getItem(wantedUnitCode) }
+                    <h4>
+                      { wantedUnitCode + " :  " + localStorage.getItem(wantedUnitCode) }
+                    </h4>
                   </a>
                 </div>
             )
