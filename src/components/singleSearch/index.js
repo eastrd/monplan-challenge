@@ -37,7 +37,7 @@ class SingleSearchComponent extends React.Component {
     const { data, error } = this.state
     const { unitName, unitCode, description } = data
     return (
-      <div style={{width: '80%', textAlign: 'center'}}>
+      <div style={{width: '80%', textAlign: 'left'}}>
         <h1>{error ? "Error" : unitCode} {error ? ":" : "-"} {error ? "Unit not found" : unitName}</h1>
         <p>{error ? "M8, Try search something else" : description}</p>
       </div>
