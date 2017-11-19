@@ -35,25 +35,14 @@ class FetchAllComponent extends React.Component {
   }
 
   render () {
-    // Get everything except ID from the returned JSON data
+    // Clear localStorage and then store the unit info (refresh)
+    localStorage.clear();
     const { allUnitData, error } = this.state
-    let allUnits = []
     for (var i=0; i<allUnitData.length; i++){
-      var unitMap = {}
-      unitMap["unitName"] = allUnitData[i]["unitName"]
-      unitMap["unitCode"] = allUnitData[i]["unitCode"]
-      unitMap["creditPoints"] = allUnitData[i]["creditPoints"]
-      unitMap["faculty"] = allUnitData[i]["faculty"]
-      unitMap["scaBand"] = allUnitData[i]["scaBand"]
-      unitMap["locationAndTime"] = allUnitData[i]["locationAndTime"]
-      allUnits.push(unitMap)
+      localStorage.setItem(allUnitData[i]["unitCode"], allUnitData[i]["unitName"])
     }
-    console.log(allUnits)
-    console.log(allUnitData)
-    localStorage.setItem("allUnitData", allUnits)
-    return (
-      <h1> Heyyy </h1>
-    )
+    console.log("Done Fetching All Units")
+    return ( <h1> { error ? "Error fetching units info" : "" } </h1> )
   }
 }
 
