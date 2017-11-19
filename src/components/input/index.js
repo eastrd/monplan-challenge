@@ -30,15 +30,19 @@ class InputComponent extends React.Component {
     const length = this.state.input.length
     return (
       <div>
-        <input type="text" onChange={this.handleChange} />
-        <br />
-        {
-          length == 7 ?
-            <SingleSearchComponent unitCode={this.state.input} />
-              : length >= 3 && length < 7 ?
-                  <FuzzySearchComponent unitCode={this.state.input} />
-                    : null
-        }
+        Search Unit Code:
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="text" onChange={this.handleChange} placeholder="FIT2093" />
+        <div class="ui divider">
+          <br />
+          {
+            length == 7 ?
+              <SingleSearchComponent unitCode={this.state.input} />
+                : length >= 3 && length < 7 ?
+                    <FuzzySearchComponent unitCode={this.state.input} />
+                      : null
+          }
+        </div>
       </div>
     )
   }
