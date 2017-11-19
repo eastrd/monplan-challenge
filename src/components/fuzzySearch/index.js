@@ -1,5 +1,5 @@
 /*
-  This component takes a parameter of the search term (unit code) whose length is
+  This component takes the user input (partial unit code) whose length is
     in between 3 to 6 inclusive, and it displays all the unit code and name that
     matches the given partial unit code.
 */

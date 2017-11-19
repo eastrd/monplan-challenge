@@ -1,6 +1,7 @@
 /*
   This component is inteneded for single unit code ONLY.
-  If part of the search input is provided, please refer to GroupSearchComponent.
+  It takes one unit code and hit the RestAPI endpoint and displays its info.
+  If there's an error in RestAPI, displays an error to user.
 */
 
 import React from 'react'
