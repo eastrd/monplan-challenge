@@ -21,13 +21,13 @@ class FuzzySearchComponent extends React.Component {
     // Handles user click on the unit code, sets the input as user clicked unit code
     // Substr the first 4 digits for the unit code
     const unitCode = e.currentTarget.textContent
-    this.state.input = unitCode.substr(0, 7)
+    this.setState({input: unitCode.substr(0, 7)})
     this.forceUpdate()
   }
 
   handleBackButtonClick(){
     // When the user clicks the back button, the page will display result list
-    this.state.input = ""
+    this.setState({input: ""})
     this.forceUpdate()
   }
 
@@ -38,7 +38,6 @@ class FuzzySearchComponent extends React.Component {
       Returns an array that contains all unit codes that's been filtered
     */
     const inputCode = this.state.input
-    console.log(inputCode)
     if (inputCode.length > 0){
       // Make sure when the user click to view the detail of an unit,
       // if he/she types something in the search bar, it will continue searching
