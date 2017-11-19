@@ -1,5 +1,6 @@
 import React from "react"
 import SingleSearchComponent from '../singleSearch'
+import FuzzySearchComponent from '../fuzzySearch'
 
 class InputComponent extends React.Component {
   constructor(props){
@@ -17,10 +18,18 @@ class InputComponent extends React.Component {
   render(){
     // If the input is < 7 digits but >= 3 digits, search all units that matches.
     // If the input is exactly 7 digits, search the exact unit code.
+    const length = this.state.input.length
     return (
       <div>
         <input type="text" onChange={this.handleChange} />
-        { this.state.input.length == 7 ? <SingleSearchComponent unitCode={this.state.input} /> : null}
+        <br />
+        {
+          length == 7 ?
+            <SingleSearchComponent unitCode={this.state.input} />
+              : length >= 3 && length < 7 ?
+                  <FuzzySearchComponent unitCode={this.state.input} /> 
+                    : null
+        }
       </div>
     )
   }
