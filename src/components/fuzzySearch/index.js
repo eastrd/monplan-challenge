@@ -68,11 +68,11 @@ class FuzzySearchComponent extends React.Component {
       // Split the array of unit codes into each li item
       //    and display their descriptions from localStorage
       return (
-        <div>
+        <div class="ui middle aligned animated list">
           {
             wantedUnitCodes.map(
               wantedUnitCode =>
-                <div onClick={this.handleUnitClick} style={{textAlign: 'left'}}>
+                <div class="item" onClick={this.handleUnitClick} style={{textAlign: 'left'}}>
                   <a href="#" style={linkNoUnderscoreNoColourStyle}>
                     <h4>
                       { wantedUnitCode + " :  " + localStorage.getItem(wantedUnitCode) }
